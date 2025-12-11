@@ -43,11 +43,9 @@ export const EXPERIENCE_DATA: Job[] = [
     location: "Melbourne, Australia",
     period: "Nov 2024 - Present",
     details: [
-      "Operated in a high-volume technical retail environment, diagnosing customer issues across mobile, NBN, IoT devices, entertainment bundles, and enterprise accounts.",
-      "Used **Salesforce CRM (Console)** for structured lead capture, customer profiling, workflow routing, and case escalation across multiple Telstra support units.",
-      "Identified recurring customer pain points (billing errors, internet dropouts, SIM provisioning failures) and mapped them to correct troubleshooting workflows - improving first-contact resolution and reducing escalations.",
-      "Collaborated with internal technical teams to surface patterns in device faults, network issues, and order failures, strengthening Telstra's retail->support feedback loop.",
-      "Developed strong understanding of enterprise-grade CX environments, support workflows, and decision trees - foundational for building **LLM-powered CX automation tools**."
+      "Leveraged **Salesforce CRM (Console)** to manage customer data, streamline workflows, and support data-driven decisions.",
+      "Coordinated with teams to ensure smooth operations and resolved conflicts effectively through strong communication.",
+      "Built skills in **CRM systems**, stakeholder engagement, and problem-solving, with exposure to **AI-driven customer experience** opportunities."
     ]
   },
   {
@@ -56,11 +54,9 @@ export const EXPERIENCE_DATA: Job[] = [
     location: "Pune, India",
     period: "Jun 2023 - Jan 2024",
     details: [
-      "Built wireless robotic-control pipeline using **YOLO** and custom **CNN/ANN models** for real-time object detection and navigation.",
-      "Improved on-device inference stability by optimizing preprocessing, quantizing model weights, and building lightweight inference wrapper - **reducing latency by ~35%**.",
-      "Integrated perception module with robot's control system, enabling responsive task execution and safe operation under variable lighting and clutter.",
-      "Conducted data collection, labeling, augmentation, and model evaluation; improved mean average precision with iterative training and failure-case analysis.",
-      "Delivered deployable Python application used in prototype robotic systems for autonomous tasks."
+      "Built **ML solutions** for robotic systems, implementing **YOLO, CNNs, and ANNs** for real-time object detection.",
+      "Developed **Python-based control system**, improving automation, accuracy, and efficiency in robotics workflows.",
+      "Collaborated with engineers to integrate **AI models** into production, balancing research with deployment."
     ]
   },
   {
@@ -69,11 +65,32 @@ export const EXPERIENCE_DATA: Job[] = [
     location: "Bengaluru, India",
     period: "Nov 2022 - May 2023",
     details: [
-      "Designed and deployed **predictive maintenance system** for industrial pumps using **LSTM-based anomaly detection** and ensemble fault-classification models.",
-      "Built automated pipelines for data ingestion -> feature engineering -> model training -> batch scoring, orchestrated via **CI/CD workflows**.",
-      "Containerized training and inference services using **Docker**; deployed on **AWS EC2** with scheduled retraining and monitoring.",
-      "Improved fault-detection accuracy through advanced feature extraction (spectral + statistical) and model ensembling.",
-      "Produced engineering dashboards for maintenance teams, enabling early detection of operational risks."
+      "Led **predictive maintenance (PdM) project**, using **LSTM and ensemble models** for anomaly detection and fault classification.",
+      "Designed and deployed **MLOps pipeline** with **CI/CD, Docker, and AWS EC2**, enabling scalable model training and deployment.",
+      "Coordinated with cross-functional teams to deliver insights from real-time industrial pump data, driving data-informed decisions."
+    ]
+  },
+  {
+    company: "CIE Automotive",
+    role: "Research And Development Engineer",
+    location: "Aurangabad, Maharashtra, India",
+    period: "Oct 2021 - Nov 2022",
+    details: [
+      "Applied **ML** to optimise **HPDC processes**, improving cycle stability and quality.",
+      "Built **defect-prediction models** (porosity, cold shuts, misruns) from machine logs and sensor data.",
+      "Developed **anomaly detection & tool-wear prediction systems** to reduce scrap and unplanned downtime.",
+      "Collaborated with production teams to convert model insights into better parameter windows and higher first-pass yield."
+    ]
+  },
+  {
+    company: "iNeuron.ai",
+    role: "Machine Learning Intern",
+    location: "Remote",
+    period: "Jul 2022 - Feb 2023",
+    details: [
+      "Worked on several **End-to-End Industry level projects** covering full ML lifecycle from data collection to deployment.",
+      "Gained hands-on experience with production ML systems, model optimization, and deployment pipelines.",
+      "Collaborated with team members on real-world ML challenges and industry-standard best practices."
     ]
   }
 ];
