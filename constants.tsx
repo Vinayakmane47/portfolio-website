@@ -86,16 +86,29 @@ export const EDUCATION_DATA: Degree[] = [
 
 export const PROJECTS_DATA: Project[] = [
   {
+    title: "arXiv Paper RAG System",
+    techStack: ["FastAPI", "PostgreSQL", "OpenSearch", "Apache Airflow", "Ollama", "Redis", "Langfuse", "Jina AI", "Docling", "Gradio", "Docker"],
+    period: "2024",
+    description: [
+      "Built a production-grade RAG system for arXiv papers with hybrid search (BM25 + semantic) achieving 84% precision and 89% recall.",
+      "Implemented end-to-end pipeline: PDF parsing with Docling, document chunking, embedding generation (Jina AI), and vector storage in OpenSearch.",
+      "Designed Airflow DAGs for automated paper ingestion, deployed FastAPI REST API with streaming responses, and integrated Redis caching (60%+ hit rate) reducing costs by 60%+."
+    ],
+    links: {
+      repo: "https://github.com/Vinayakmane47/arxiv-paper-rag"
+    }
+  },
+  {
     title: "IMDB Sentiment Analysis",
     techStack: ["Python", "MLflow", "DVC", "AWS EKS", "Prometheus"],
-    period: "Jun 2023",
+    period: "Dec 2025",
     description: [
       "Built a full Industry grade MLOps pipeline with MLflow, DVC, CI/CD, and containerized training/inference.",
       "Deployed scalable Flask inference on AWS EKS with Prometheus/Grafana monitoring."
     ],
     links: {
-      repo: "https://github.com/Vinayakmane47/imdb-mlops",
-      video: "https://youtube.com"
+      repo: "https://github.com/Vinayakmane47/imdb_mlops",
+      video: "https://youtu.be/0nNESkevqgM"
     }
   },
   {
@@ -108,7 +121,7 @@ export const PROJECTS_DATA: Project[] = [
     ],
     links: {
       repo: "https://github.com/Vinayakmane47/database-chatbot",
-      video: "https://youtube.com"
+      video: "https://youtu.be/sax2rbURoY4"
     }
   },
   {
@@ -121,7 +134,7 @@ export const PROJECTS_DATA: Project[] = [
     ],
     links: {
       repo: "https://github.com/Vinayakmane47/podcast-chatbot",
-      video: "https://youtube.com"
+      video: "https://youtu.be/E1Y8y4eRpGY"
     }
   },
   {
@@ -134,7 +147,7 @@ export const PROJECTS_DATA: Project[] = [
     ],
     links: {
       repo: "https://github.com/Vinayakmane47/NASA-turbofan-ML-Project-AIOPS",
-      video: "https://youtube.com"
+      video: "https://youtu.be/WK7NbTI4pNk"
     }
   }
 ];
