@@ -10,7 +10,7 @@ import {
 
 export const CONTACT_INFO: ContactInfo = {
   phone: "+61 0468470514",
-  email: "vman0027@student.monash.edu",
+  email: "manevinayakv.47@gmail.com",
   address: "Melbourne, VIC 2053",
   linkedin: "https://www.linkedin.com/in/vinayak-mane-637698143/", // Placeholder as specific URL wasn't in text
   github: "https://github.com/Vinayakmane47",     // Placeholder
