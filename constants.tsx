@@ -11,28 +11,28 @@ import {
 export const CONTACT_INFO: ContactInfo = {
   phone: "+61 0468470514",
   email: "vman0027@student.monash.edu",
-  address: "590 Lygon, Carlton, Melbourne, VIC 12345",
-  linkedin: "https://linkedin.com", // Placeholder as specific URL wasn't in text
-  github: "https://github.com",     // Placeholder
-  website: "https://portfolio.com"  // Placeholder
+  address: "Melbourne, VIC 2053",
+  linkedin: "https://www.linkedin.com/in/vinayak-mane-637698143/", // Placeholder as specific URL wasn't in text
+  github: "https://github.com/Vinayakmane47",     // Placeholder
+  website: "https://portfolio-website-gilt-chi.vercel.app/"  // Placeholder
 };
 
 export const SKILLS_DATA: SkillCategory[] = [
   {
     category: "AI/ML & GenAI",
-    items: ["LLMs", "RAG", "Deep Learning (TensorFlow, PyTorch)", "NLP", "Computer Vision", "Hugging Face", "LangChain", "LangGraph"]
+    items: ["LLMs", "RAG", "Deep Learning (TensorFlow, PyTorch)", "NLP", "Computer Vision", "Hugging Face", "LangChain", "LangGraph", "Ollama", "OpenAI Whisper", "Jina AI (Embeddings)"]
   },
   {
     category: "MLOps & DevOps",
-    items: ["MLflow", "DVC", "GitHub Actions", "CircleCI", "Docker", "Kubernetes", "Airflow", "Prometheus", "Grafana", "Langfuse"]
+    items: ["MLflow", "DVC", "GitHub Actions", "CircleCI", "Docker", "Kubernetes", "Apache Airflow", "Prometheus", "Grafana", "Langfuse", "CI/CD"]
   },
   {
     category: "Cloud & Databases",
-    items: ["AWS (EC2, S3, SageMaker)", "PostgreSQL", "MySQL", "MongoDB"]
+    items: ["AWS (EC2, S3, SageMaker, EKS)", "PostgreSQL", "MySQL", "MongoDB", "OpenSearch", "Redis"]
   },
   {
     category: "Programming & Frameworks",
-    items: ["Python", "SQL", "FastAPI", "Flask", "Jupyter", "Git/GitHub"]
+    items: ["Python", "SQL", "FastAPI", "Flask", "Jupyter", "Git/GitHub", "Gradio", "Docling"]
   }
 ];
 
@@ -88,23 +88,24 @@ export const PROJECTS_DATA: Project[] = [
   {
     title: "arXiv Paper RAG System",
     techStack: ["FastAPI", "PostgreSQL", "OpenSearch", "Apache Airflow", "Ollama", "Redis", "Langfuse", "Jina AI", "Docling", "Gradio", "Docker"],
-    period: "2024",
+    period: "2025",
     description: [
       "Built a production-grade RAG system for arXiv papers with hybrid search (BM25 + semantic) achieving 84% precision and 89% recall.",
       "Implemented end-to-end pipeline: PDF parsing with Docling, document chunking, embedding generation (Jina AI), and vector storage in OpenSearch.",
       "Designed Airflow DAGs for automated paper ingestion, deployed FastAPI REST API with streaming responses, and integrated Redis caching (60%+ hit rate) reducing costs by 60%+."
     ],
     links: {
-      repo: "https://github.com/Vinayakmane47/arxiv-paper-rag"
+      repo: "https://github.com/Vinayakmane47/arxiv-paper-rag",
+      video: "https://youtu.be/SmtmNT95E2I"
     }
   },
   {
     title: "IMDB Sentiment Analysis",
-    techStack: ["Python", "MLflow", "DVC", "AWS EKS", "Prometheus"],
+    techStack: ["Python", "MLflow", "DVC", "AWS EKS", "Prometheus","Grafana","Kubernetes" ,"CI/CD","Docker","AWS EC2" ,"FastAPI"],
     period: "Dec 2025",
     description: [
       "Built a full Industry grade MLOps pipeline with MLflow, DVC, CI/CD, and containerized training/inference.",
-      "Deployed scalable Flask inference on AWS EKS with Prometheus/Grafana monitoring."
+      "Deployed scalable FastAPI inference on AWS EKS with Prometheus/Grafana monitoring."
     ],
     links: {
       repo: "https://github.com/Vinayakmane47/imdb_mlops",
