@@ -100,7 +100,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
   }, []);
 
   return (
-    <SectionWrapper title="Welcome" subtitle="Master's Student in Artificial Intelligence & Machine Learning Engineer" id={Tab.HOME}>
+    <SectionWrapper title="Welcome" subtitle="Artificial Intelligence & Machine Learning Engineer" id={Tab.HOME}>
       <div className="relative">
         {/* Background Animation Canvas */}
         <canvas 
