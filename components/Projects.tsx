@@ -3,6 +3,36 @@ import { SectionWrapper } from './SectionWrapper';
 import { PROJECTS_DATA } from '../constants';
 import { Github, ExternalLink, Youtube, Calendar } from 'lucide-react';
 
+// Helper function to render text with bold formatting
+const renderFormattedText = (text: string) => {
+  const parts: React.ReactNode[] = [];
+  const regex = /\*\*(.*?)\*\*/g;
+  let lastIndex = 0;
+  let match;
+  let key = 0;
+
+  while ((match = regex.exec(text)) !== null) {
+    // Add text before the match
+    if (match.index > lastIndex) {
+      parts.push(text.substring(lastIndex, match.index));
+    }
+    // Add bold text with color
+    parts.push(
+      <strong key={key++} className="font-semibold text-primary-700">
+        {match[1]}
+      </strong>
+    );
+    lastIndex = regex.lastIndex;
+  }
+
+  // Add remaining text
+  if (lastIndex < text.length) {
+    parts.push(text.substring(lastIndex));
+  }
+
+  return parts.length > 0 ? parts : [text];
+};
+
 export const Projects: React.FC = () => {
   return (
     <SectionWrapper title="Projects" subtitle="Featured work and contributions">
@@ -28,7 +58,7 @@ export const Projects: React.FC = () => {
               <div className="space-y-2 mb-2">
                 {project.description.map((desc, i) => (
                   <p key={i} className="text-sm text-slate-600 leading-relaxed">
-                    • {desc}
+                    • {renderFormattedText(desc)}
                   </p>
                 ))}
               </div>
@@ -72,7 +102,7 @@ export const Projects: React.FC = () => {
       
       <div className="mt-8 p-4 md:p-6 bg-slate-50 rounded-xl border border-slate-200 text-center">
         <p className="text-sm md:text-base text-slate-600">
-          More projects available on my <a href="https://github.com" className="text-primary-600 hover:underline font-semibold">GitHub</a> including a Dog Breed Classifier and Question Similarity model.
+          More projects available on my <a href="https://github.com/Vinayakmane47" className="text-primary-600 hover:underline font-semibold">GitHub</a> including a Dog Breed Classifier and Question Similarity model.
         </p>
       </div>
     </SectionWrapper>

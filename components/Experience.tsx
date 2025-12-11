@@ -3,6 +3,36 @@ import { SectionWrapper } from './SectionWrapper';
 import { EXPERIENCE_DATA } from '../constants';
 import { Calendar, MapPin } from 'lucide-react';
 
+// Helper function to render text with bold formatting
+const renderFormattedText = (text: string) => {
+  const parts: React.ReactNode[] = [];
+  const regex = /\*\*(.*?)\*\*/g;
+  let lastIndex = 0;
+  let match;
+  let key = 0;
+
+  while ((match = regex.exec(text)) !== null) {
+    // Add text before the match
+    if (match.index > lastIndex) {
+      parts.push(text.substring(lastIndex, match.index));
+    }
+    // Add bold text with color
+    parts.push(
+      <strong key={key++} className="font-semibold text-primary-700">
+        {match[1]}
+      </strong>
+    );
+    lastIndex = regex.lastIndex;
+  }
+
+  // Add remaining text
+  if (lastIndex < text.length) {
+    parts.push(text.substring(lastIndex));
+  }
+
+  return parts.length > 0 ? parts : [text];
+};
+
 export const Experience: React.FC = () => {
   return (
     <SectionWrapper title="Professional Experience" subtitle="My career journey so far">
@@ -46,7 +76,7 @@ export const Experience: React.FC = () => {
                   {job.details.map((detail, idx) => (
                     <li key={idx} className="relative pl-4 text-slate-600 text-sm leading-relaxed">
                       <span className="absolute left-0 top-2 w-1.5 h-1.5 bg-slate-300 rounded-full"></span>
-                      {detail}
+                      {renderFormattedText(detail)}
                     </li>
                   ))}
                 </ul>

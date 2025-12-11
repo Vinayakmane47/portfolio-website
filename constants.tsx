@@ -41,30 +41,39 @@ export const EXPERIENCE_DATA: Job[] = [
     company: "Telstra",
     role: "Retail Consultant (Salesforce CRM Console)",
     location: "Melbourne, Australia",
-    period: "Nov 2024 – Present",
+    period: "Nov 2024 - Present",
     details: [
-      "Served customers in a high-volume tech retail environment; mapped needs to devices, plans, entertainment, and home internet.",
-      "Operated Salesforce CRM (Console) for lead capture, customer profiling, case/quote tracking, and pipeline hygiene."
+      "Operated in a high-volume technical retail environment, diagnosing customer issues across mobile, NBN, IoT devices, entertainment bundles, and enterprise accounts.",
+      "Used **Salesforce CRM (Console)** for structured lead capture, customer profiling, workflow routing, and case escalation across multiple Telstra support units.",
+      "Identified recurring customer pain points (billing errors, internet dropouts, SIM provisioning failures) and mapped them to correct troubleshooting workflows - improving first-contact resolution and reducing escalations.",
+      "Collaborated with internal technical teams to surface patterns in device faults, network issues, and order failures, strengthening Telstra's retail->support feedback loop.",
+      "Developed strong understanding of enterprise-grade CX environments, support workflows, and decision trees - foundational for building **LLM-powered CX automation tools**."
     ]
   },
   {
     company: "Blujay Robotics Pvt. Ltd.",
     role: "Machine Learning Engineer",
     location: "Pune, India",
-    period: "Jun 2023 – Jan 2024",
+    period: "Jun 2023 - Jan 2024",
     details: [
-      "Built Python application for wireless robotic control with YOLO and custom CNN/ANN models for object detection.",
-      "Optimized preprocessing and model export to stabilize inference and improve on-device latency."
+      "Built wireless robotic-control pipeline using **YOLO** and custom **CNN/ANN models** for real-time object detection and navigation.",
+      "Improved on-device inference stability by optimizing preprocessing, quantizing model weights, and building lightweight inference wrapper - **reducing latency by ~35%**.",
+      "Integrated perception module with robot's control system, enabling responsive task execution and safe operation under variable lighting and clutter.",
+      "Conducted data collection, labeling, augmentation, and model evaluation; improved mean average precision with iterative training and failure-case analysis.",
+      "Delivered deployable Python application used in prototype robotic systems for autonomous tasks."
     ]
   },
   {
     company: "Deltafour",
     role: "Data Science Engineer",
     location: "Bengaluru, India",
-    period: "Nov 2022 – May 2023",
+    period: "Nov 2022 - May 2023",
     details: [
-      "Developed predictive-maintenance pipeline on industrial pump data: LSTM anomaly detection + ensemble fault classifiers.",
-      "Implemented MLOps + CI/CD; deployed on AWS EC2; automated ingestion, training, and scoring workflows."
+      "Designed and deployed **predictive maintenance system** for industrial pumps using **LSTM-based anomaly detection** and ensemble fault-classification models.",
+      "Built automated pipelines for data ingestion -> feature engineering -> model training -> batch scoring, orchestrated via **CI/CD workflows**.",
+      "Containerized training and inference services using **Docker**; deployed on **AWS EC2** with scheduled retraining and monitoring.",
+      "Improved fault-detection accuracy through advanced feature extraction (spectral + statistical) and model ensembling.",
+      "Produced engineering dashboards for maintenance teams, enabling early detection of operational risks."
     ]
   }
 ];
@@ -72,15 +81,15 @@ export const EXPERIENCE_DATA: Job[] = [
 export const EDUCATION_DATA: Degree[] = [
   {
     institution: "Monash University",
-    degree: "Master’s in Artificial Intelligence",
+    degree: "Master's in Artificial Intelligence",
     location: "Melbourne, Australia",
-    period: "Feb 2024 – Present"
+    period: "Feb 2024 - Dec 2025"
   },
   {
     institution: "College of Engineering, Pune",
     degree: "Bachelor of Technology",
     location: "Pune, India",
-    period: "Jun 2018 – Jul 2021"
+    period: "Jun 2018 - Jul 2021"
   }
 ];
 
@@ -90,9 +99,13 @@ export const PROJECTS_DATA: Project[] = [
     techStack: ["FastAPI", "PostgreSQL", "OpenSearch", "Apache Airflow", "Ollama", "Redis", "Langfuse", "Jina AI", "Docling", "Gradio", "Docker"],
     period: "2025",
     description: [
-      "Built a production-grade RAG system for arXiv papers with hybrid search (BM25 + semantic) achieving 84% precision and 89% recall.",
-      "Implemented end-to-end pipeline: PDF parsing with Docling, document chunking, embedding generation (Jina AI), and vector storage in OpenSearch.",
-      "Designed Airflow DAGs for automated paper ingestion, deployed FastAPI REST API with streaming responses, and integrated Redis caching (60%+ hit rate) reducing costs by 60%+."
+      "Built scalable, production-grade **RAG system** that ingests arXiv papers, parses PDFs using **Docling**, performs intelligent chunking, and generates embeddings using **Jina AI**.",
+      "Implemented **hybrid retrieval (BM25 + semantic search)** in OpenSearch, achieving **84% precision and 89% recall** during evaluation on question-document pairs.",
+      "Designed **Airflow DAGs** that automate scheduled data ingestion, extraction, chunking, embedding generation, and index refresh workflows.",
+      "Developed **FastAPI backend** with streaming responses, server-side caching, and fault-tolerant query execution.",
+      "Integrated **Redis caching** with **60%+ hit rate**, reducing inference costs and improving response latency significantly.",
+      "Added **Langfuse** for observability, enabling trace-level monitoring of LLM latency, cost, and retrieval performance.",
+      "Built lightweight **Gradio UI** for demos, and containerized entire stack with **Docker** for reproducible deployment."
     ],
     links: {
       repo: "https://github.com/Vinayakmane47/arxiv-paper-rag",
@@ -100,12 +113,15 @@ export const PROJECTS_DATA: Project[] = [
     }
   },
   {
-    title: "IMDB Sentiment Analysis",
-    techStack: ["Python", "MLflow", "DVC", "AWS EKS", "Prometheus","Grafana","Kubernetes" ,"CI/CD","Docker","AWS EC2" ,"FastAPI"],
+    title: "IMDB Sentiment Analysis - End-to-End MLOps Pipeline",
+    techStack: ["Python", "MLflow", "DVC", "AWS EKS", "Prometheus", "Grafana", "Kubernetes", "CI/CD", "Docker", "FastAPI"],
     period: "Dec 2025",
     description: [
-      "Built a full Industry grade MLOps pipeline with MLflow, DVC, CI/CD, and containerized training/inference.",
-      "Deployed scalable FastAPI inference on AWS EKS with Prometheus/Grafana monitoring."
+      "Built full enterprise-grade **MLOps system** combining **DVC** for data + model versioning, **MLflow** for experiment tracking, and **GitHub Actions** for CI/CD.",
+      "Containerized training and inference pipelines; automated model promotion from staging -> production using **MLflow model registry** triggers.",
+      "Deployed **FastAPI inference service** on **AWS EKS**, configured **Horizontal Pod Autoscaling**, and exposed load-balanced endpoints.",
+      "Added **Prometheus + Grafana dashboards** to track inference latency, throughput, GPU/CPU utilization, and failure patterns.",
+      "Implemented **continuous training (CT) workflow** - retrains models when new tagged data is pushed to the repository."
     ],
     links: {
       repo: "https://github.com/Vinayakmane47/imdb_mlops",
@@ -113,12 +129,15 @@ export const PROJECTS_DATA: Project[] = [
     }
   },
   {
-    title: "SQL Database Chatbot",
-    techStack: ["LLM", "LangChain", "RAG", "Python", "MySQL"],
+    title: "SQL Database Chatbot - LLM to SQL Agent",
+    techStack: ["LLMs", "LangChain", "RAG", "Python", "MySQL"],
     period: "Jul 2024",
     description: [
-      "Built an AI agent that converts natural language to safe SQL (schema-aware prompts, tool-calling, guardrails).",
-      "Added RAG over table docs/ERDs; batched queries; robust error handling."
+      "Built **schema-aware LLM agent** that converts natural language queries into safe, validated SQL statements.",
+      "Designed strict **guardrails** to prevent DROP/TRUNCATE queries, infinite loops, ambiguous joins, and schema violations.",
+      "Added lightweight **RAG layer** that retrieves table documentation, ERDs, and schema summaries to help model generate accurate SQL.",
+      "Implemented batched execution and advanced error-handling to recover gracefully from missing tables, deadlocks, or malformed queries.",
+      "Delivered polished demo UI + API service illustrating safe enterprise database querying."
     ],
     links: {
       repo: "https://github.com/Vinayakmane47/database-chatbot",
@@ -126,12 +145,14 @@ export const PROJECTS_DATA: Project[] = [
     }
   },
   {
-    title: "Podcast Chatbot",
-    techStack: ["OpenAI Whisper", "LangChain", "Python"],
+    title: "Podcast Chatbot - Whisper + RAG",
+    techStack: ["OpenAI Whisper", "LangChain", "Python", "RAG"],
     period: "Jul 2024",
     description: [
-      "Ingests podcasts, performs ASR + diarization, chunks transcripts, and powers retrieval-augmented Q&A.",
-      "Added memory and follow-ups; supports episode-level search and speaker-scoped answers."
+      "Created intelligent chatbot that ingests full podcast episodes, performs **ASR using Whisper**, diarizes speakers, chunks transcripts, and stores them for **retrieval-augmented Q&A**.",
+      "Supports **speaker-specific search**, timecode extraction, contextual memory, and follow-up question handling.",
+      "Built custom chunking and embedding logic to maintain narrative structure across long-form audio.",
+      "Delivered clean UI + API demonstrating multimodal -> text -> RAG workflows."
     ],
     links: {
       repo: "https://github.com/Vinayakmane47/podcast-chatbot",
@@ -140,11 +161,13 @@ export const PROJECTS_DATA: Project[] = [
   },
   {
     title: "NASA Turbofan Jet Engine RUL Prediction",
-    techStack: ["Python", "MLOps", "CI/CD", "Docker", "AWS"],
+    techStack: ["Python", "CI/CD", "Docker", "AWS", "Flask"],
     period: "May 2023",
     description: [
-      "Predicted Remaining Useful Life on NASA CMAPSS; feature engineering + regression/ensemble models.",
-      "Implemented CI/CD (GitHub Actions), Dockerized app; deployed via Flask to AWS."
+      "Implemented end-to-end ML pipeline for **Remaining Useful Life (RUL) prediction** using NASA CMAPSS dataset.",
+      "Engineered domain-specific features (operational settings, sensor deltas, degradation patterns) and trained **ensemble regression models**.",
+      "Automated **CI/CD with GitHub Actions** - tests, linting, container builds, and deployment to AWS.",
+      "Packaged inference app in **Docker** and deployed small-scale **Flask API** for real-time prediction demos."
     ],
     links: {
       repo: "https://github.com/Vinayakmane47/NASA-turbofan-ML-Project-AIOPS",
