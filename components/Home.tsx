@@ -1,7 +1,15 @@
 import React, { useEffect, useRef } from 'react';
 import { SectionWrapper } from './SectionWrapper';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Clock, FolderGit2, Wrench, GraduationCap } from 'lucide-react';
 import { Tab } from '../App';
+import { SKILLS_DATA } from '../constants';
+
+const STATS = [
+  { icon: Clock,         value: '3+',  label: 'Years of Experience', hint: 'AI/ML across industry & research' },
+  { icon: FolderGit2,    value: '15+', label: 'End-to-end Projects', hint: 'Shipped, documented, and visualized' },
+  { icon: Wrench,        value: `${SKILLS_DATA.reduce((s, c) => s + c.items.length, 0)}+`, label: 'Technologies', hint: 'AI/ML, MLOps, Cloud, Data' },
+  { icon: GraduationCap, value: `M.S.`, label: 'Artificial Intelligence', hint: 'Monash University, Melbourne' },
+];
 
 interface HomeProps {
   onNavigate: (tab: Tab) => void;
@@ -100,6 +108,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
   }, []);
 
   return (
+    <>
     <SectionWrapper title="Welcome" subtitle="Artificial Intelligence & Machine Learning Engineer" id={Tab.HOME}>
       <div className="relative">
         {/* Background Animation Canvas */}
@@ -159,5 +168,28 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
         </div>
       </div>
     </SectionWrapper>
+
+    {/* Stats strip — quick credibility scan */}
+    <section className="mb-16 md:mb-24 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5">
+      {STATS.map(({ icon: Icon, value, label, hint }) => (
+        <div
+          key={label}
+          className="group bg-white border border-slate-200 rounded-xl p-5 md:p-6 shadow-sm hover:shadow-md hover:border-primary-200 transition-all"
+        >
+          <div className="flex items-center justify-between mb-3">
+            <div className="p-2 bg-primary-50 text-primary-600 rounded-lg group-hover:bg-primary-100 transition-colors">
+              <Icon size={18} />
+            </div>
+            <div className="h-px flex-1 ml-3 bg-gradient-to-r from-slate-200 to-transparent" />
+          </div>
+          <p className="text-3xl md:text-4xl font-bold text-slate-900 leading-none tracking-tight">
+            {value}
+          </p>
+          <p className="mt-2 text-sm font-semibold text-slate-700">{label}</p>
+          <p className="mt-1 text-xs text-slate-500 leading-snug">{hint}</p>
+        </div>
+      ))}
+    </section>
+    </>
   );
 };

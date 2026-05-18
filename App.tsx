@@ -42,7 +42,7 @@ export default function App() {
       <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
 
       {/* Main Content Area */}
-      <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 max-w-6xl">
+      <main className="flex-grow mx-auto w-full px-4 sm:px-6 lg:px-10 py-8 md:py-12 max-w-[1600px]">
         <div className="animate-fadeIn min-h-[60vh]">
           {renderContent()}
         </div>
