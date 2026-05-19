@@ -180,7 +180,7 @@ export const PROJECTS_DATA: Project[] = [
       summary: "An end-to-end aviation MLOps platform: streaming + batch ingestion of OpenSky flight telemetry, a Bronze/Silver/Gold lakehouse on MinIO, Feast online features in Redis, Optuna AutoML training across three models (delay / congestion / anomaly), MLflow tracking + registry, FastAPI inference with SHAP `/explain`, champion/challenger A/B testing, Evidently drift-triggered retraining, and Prometheus + Grafana + Loki observability. 12 services. 5 Airflow DAGs. One docker compose up.",
       hero: {
         image: {
-          src: "/images/projects/opensky-mlops/architecture.png",
+          src: "/images/projects/opensky-mlops/architecture.webp",
           alt: "OpenSky MLOps platform architecture",
           caption: "Complete platform architecture across ingestion, lakehouse, streaming, feature store, training, serving, and observability. Source: OPENSKY-MLOPS/docs/diagrams/architecture.png."
         }
@@ -359,17 +359,17 @@ export const PROJECTS_DATA: Project[] = [
         { title: "Helm-ready from day one", body: "The Docker Compose stack is the dev environment; the production target is Kubernetes. Keeping service config in a Helm chart (`k8s/helm/` with dev / staging / prod values) from the start avoided the usual painful Compose-to-K8s migration." }
       ],
       gallery: [
-        { src: "/images/projects/opensky-mlops/dashboard.png",          alt: "React dashboard",        caption: "React + Tailwind dashboard - live aircraft map coloured by risk, with side panels for top countries, altitude bands, and flight phase." },
-        { src: "/images/projects/opensky-mlops/swagger.png",            alt: "Swagger UI",             caption: "FastAPI Swagger - 13 endpoints behind an API-key gate with slowapi rate limiting (100 RPM global, 10 RPM on reload)." },
-        { src: "/images/projects/opensky-mlops/airflow-dags.png",       alt: "Airflow DAGs list",      caption: "Five Airflow DAGs (ingest, retrain, monitor, ab_analysis, feast_materialize) - decoupled schedules, independently triggerable." },
-        { src: "/images/projects/opensky-mlops/airflow-dag-graph.png",  alt: "DAG graph",              caption: "opensky_ingest_dag graph - 7 tasks: fetch OpenSky telemetry, validate, bronze->silver, silver->gold (flights / congestion / routes), publish." },
-        { src: "/images/projects/opensky-mlops/mlflow.png",             alt: "MLflow experiments",     caption: "MLflow experiments - every pipeline run logs a parent + HPO/training/eval/registry children, with model cards as artefacts." },
-        { src: "/images/projects/opensky-mlops/grafana.png",            alt: "Grafana dashboards",     caption: "Pre-provisioned Aviation dashboards - SLO burn-rate, p95 latency, cache hit ratio, prediction distributions, shadow divergence." },
-        { src: "/images/projects/opensky-mlops/prometheus.png",         alt: "Prometheus query",       caption: "Prometheus directly - `inference_in_flight_requests` queried live. Metrics scraped every 5 seconds." },
-        { src: "/images/projects/opensky-mlops/minio.png",              alt: "MinIO buckets",          caption: "MinIO console - `aviation-lake` bucket with bronze / silver / gold prefixes (gold split into flights / congestion / routes)." },
-        { src: "/images/projects/opensky-mlops/kafka-ui.png",           alt: "Kafka UI",               caption: "Kafka UI - broker / topic / consumer health at a glance." },
-        { src: "/images/projects/opensky-mlops/kafka-topics.png",       alt: "Kafka topics",           caption: "`flight_positions` topic - 631k messages in a single partition during a multi-hour producer session." },
-        { src: "/images/projects/opensky-mlops/feast.png",              alt: "Feast UI",               caption: "Feast UI - three feature views, 24 features, four entities (aircraft, airport, route, flight)." }
+        { src: "/images/projects/opensky-mlops/dashboard.webp",          alt: "React dashboard",        caption: "React + Tailwind dashboard - live aircraft map coloured by risk, with side panels for top countries, altitude bands, and flight phase." },
+        { src: "/images/projects/opensky-mlops/swagger.webp",            alt: "Swagger UI",             caption: "FastAPI Swagger - 13 endpoints behind an API-key gate with slowapi rate limiting (100 RPM global, 10 RPM on reload)." },
+        { src: "/images/projects/opensky-mlops/airflow-dags.webp",       alt: "Airflow DAGs list",      caption: "Five Airflow DAGs (ingest, retrain, monitor, ab_analysis, feast_materialize) - decoupled schedules, independently triggerable." },
+        { src: "/images/projects/opensky-mlops/airflow-dag-graph.webp",  alt: "DAG graph",              caption: "opensky_ingest_dag graph - 7 tasks: fetch OpenSky telemetry, validate, bronze->silver, silver->gold (flights / congestion / routes), publish." },
+        { src: "/images/projects/opensky-mlops/mlflow.webp",             alt: "MLflow experiments",     caption: "MLflow experiments - every pipeline run logs a parent + HPO/training/eval/registry children, with model cards as artefacts." },
+        { src: "/images/projects/opensky-mlops/grafana.webp",            alt: "Grafana dashboards",     caption: "Pre-provisioned Aviation dashboards - SLO burn-rate, p95 latency, cache hit ratio, prediction distributions, shadow divergence." },
+        { src: "/images/projects/opensky-mlops/prometheus.webp",         alt: "Prometheus query",       caption: "Prometheus directly - `inference_in_flight_requests` queried live. Metrics scraped every 5 seconds." },
+        { src: "/images/projects/opensky-mlops/minio.webp",              alt: "MinIO buckets",          caption: "MinIO console - `aviation-lake` bucket with bronze / silver / gold prefixes (gold split into flights / congestion / routes)." },
+        { src: "/images/projects/opensky-mlops/kafka-ui.webp",           alt: "Kafka UI",               caption: "Kafka UI - broker / topic / consumer health at a glance." },
+        { src: "/images/projects/opensky-mlops/kafka-topics.webp",       alt: "Kafka topics",           caption: "`flight_positions` topic - 631k messages in a single partition during a multi-hour producer session." },
+        { src: "/images/projects/opensky-mlops/feast.webp",              alt: "Feast UI",               caption: "Feast UI - three feature views, 24 features, four entities (aircraft, airport, route, flight)." }
       ]
     }
   },
@@ -392,7 +392,7 @@ export const PROJECTS_DATA: Project[] = [
       summary: "A full MLOps pipeline that predicts NYC Yellow Taxi trip durations. PySpark medallion ETL on MinIO, a two-stage Optuna search over 10 model families that freezes its winner into a `champion.json` contract, MLflow tracking and registry on DagShub gated by hard absolute thresholds (R2, RMSE, MAE), automatic retraining when Evidently detects drift, a FastAPI inference service with a web UI, Prometheus and Grafana observability, and Locust load testing. Six services, three Airflow DAGs, one `docker compose up`.",
       hero: {
         image: {
-          src: "/images/projects/nyc-taxi-mlops/architecture.png",
+          src: "/images/projects/nyc-taxi-mlops/architecture.webp",
           alt: "NYC Yellow Taxi MLOps architecture",
           caption: "End-to-end MLOps architecture from raw TLC parquet to monitored predictions, with a drift-detection loop feeding back into retraining. Source: NYC-YELLOW-TAXI-MLOPS/docs/diagrams/architecture.png."
         }
@@ -405,7 +405,7 @@ export const PROJECTS_DATA: Project[] = [
       ],
       tourStops: [
         {
-          image: { src: "/images/projects/nyc-taxi-mlops/minio.png", alt: "MinIO buckets", caption: "MinIO console showing the four medallion buckets and their monthly partitions." },
+          image: { src: "/images/projects/nyc-taxi-mlops/minio.webp", alt: "MinIO buckets", caption: "MinIO console showing the four medallion buckets and their monthly partitions." },
           title: "1. Raw TLC parquet lands in a medallion lakehouse on MinIO",
           body: [
             "Each month the pipeline pulls the latest `yellow_tripdata_{year}-{month}.parquet` from the TLC CloudFront URL and writes it untouched to `s3a://bronze/{year}/{month}/`. The download step is idempotent: if the file already exists, the task records a metadata note and exits.",
@@ -419,7 +419,7 @@ export const PROJECTS_DATA: Project[] = [
           ]
         },
         {
-          image: { src: "/images/projects/nyc-taxi-mlops/airflow-dag-graph.png", alt: "Airflow pipeline DAG graph", caption: "Eight tasks chained in order, each its own Airflow task with retries and Gantt timing." },
+          image: { src: "/images/projects/nyc-taxi-mlops/airflow-dag-graph.webp", alt: "Airflow pipeline DAG graph", caption: "Eight tasks chained in order, each its own Airflow task with retries and Gantt timing." },
           title: "2. Eight Airflow tasks chain raw parquet into a registered model",
           body: [
             "The pipeline DAG runs eight tasks in order: ingest, validate, preprocess, transform, ml-transform, train, evaluate, register. Each task is its own Python operator with retries, a Gantt-friendly duration, and code visible from the Airflow UI. There is no monolithic 'run the pipeline' bash step.",
@@ -428,7 +428,7 @@ export const PROJECTS_DATA: Project[] = [
           tools: ["Airflow", "PySpark", "MLflow", "joblib"]
         },
         {
-          image: { src: "/images/projects/nyc-taxi-mlops/airflow-dags.png", alt: "Three Airflow DAGs", caption: "Three DAGs with distinct purposes. Decoupling backfill from drift-triggered retrains keeps run history readable." },
+          image: { src: "/images/projects/nyc-taxi-mlops/airflow-dags.webp", alt: "Three Airflow DAGs", caption: "Three DAGs with distinct purposes. Decoupling backfill from drift-triggered retrains keeps run history readable." },
           title: "3. Three DAGs, three jobs, no branching megaflow",
           body: [
             "`nyc_taxi_mlops_pipeline` runs the full ingest-to-register flow monthly. `nyc_data_refresh_dag` runs alongside, refreshes data through the medallion layers, runs Evidently against the training reference, and triggers `nyc_model_retrain_dag` only when drift is detected. `nyc_model_retrain_dag` runs on demand or from that trigger, executing only train, evaluate, and register.",
@@ -437,7 +437,7 @@ export const PROJECTS_DATA: Project[] = [
           tools: ["Airflow", "Evidently"]
         },
         {
-          image: { src: "/images/projects/nyc-taxi-mlops/airflow-dag-detail.png", alt: "DAG detail view", caption: "Per-DAG task list, code, Gantt, and run history all one click away in the Airflow UI." },
+          image: { src: "/images/projects/nyc-taxi-mlops/airflow-dag-detail.webp", alt: "DAG detail view", caption: "Per-DAG task list, code, Gantt, and run history all one click away in the Airflow UI." },
           title: "4. Optuna, but frozen: a champion.json contract",
           body: [
             "Hyperparameter search is intentionally **offline**: `python src/hpo/mlflow.py` runs Stage 1 (all 10 model families on a 20k train / 10k val sample, default params, ranked by RMSE) then Stage 2 (50 Optuna trials per top-2 finalist with 3-fold CV and full search spaces). The winning configuration writes to `src/hpo/champion.json`, which is committed to the repo.",
@@ -451,7 +451,7 @@ export const PROJECTS_DATA: Project[] = [
           ]
         },
         {
-          image: { src: "/images/projects/nyc-taxi-mlops/ui-landing.png", alt: "Inference web UI", caption: "FastAPI-backed web form. The current model family and version are shown as a top-right badge." },
+          image: { src: "/images/projects/nyc-taxi-mlops/ui-landing.webp", alt: "Inference web UI", caption: "FastAPI-backed web form. The current model family and version are shown as a top-right badge." },
           title: "5. FastAPI serves both the JSON API and a one-page web UI",
           body: [
             "The inference container exposes six endpoints. `GET /` renders a Jinja2 form for stakeholders. `POST /predict` takes a single trip (pickup time, pickup zone, drop-off zone, trip distance) and returns the predicted duration plus the loaded model family and version. `POST /predict/batch` handles up to 100 trips per call. `POST /model/reload` swaps the current model from the MLflow registry in-process, with no container restart.",
@@ -460,7 +460,7 @@ export const PROJECTS_DATA: Project[] = [
           tools: ["FastAPI", "Pydantic", "Jinja2"]
         },
         {
-          image: { src: "/images/projects/nyc-taxi-mlops/ui-prediction.png", alt: "Prediction result", caption: "Result rendered from a full `/predict` round-trip, with the same model_family and model_version the JSON API would return." },
+          image: { src: "/images/projects/nyc-taxi-mlops/ui-prediction.webp", alt: "Prediction result", caption: "Result rendered from a full `/predict` round-trip, with the same model_family and model_version the JSON API would return." },
           title: "6. A predicted duration with a paper trail",
           body: [
             "Every response carries `model_family` and `model_version` (for example `random_forest` and `v9`). The version maps directly to an MLflow registry entry on DagShub, so any prediction can be traced to the exact run that produced the model, its parameters, its evaluation metrics, and its joblib artefact.",
@@ -469,7 +469,7 @@ export const PROJECTS_DATA: Project[] = [
           tools: ["MLflow", "DagShub", "joblib"]
         },
         {
-          image: { src: "/images/projects/nyc-taxi-mlops/grafana.png", alt: "Grafana dashboard", caption: "Pre-provisioned Grafana panels: request rate, error rate, latency percentiles, prediction value distribution, batch size, in-flight requests, CPU and memory." },
+          image: { src: "/images/projects/nyc-taxi-mlops/grafana.webp", alt: "Grafana dashboard", caption: "Pre-provisioned Grafana panels: request rate, error rate, latency percentiles, prediction value distribution, batch size, in-flight requests, CPU and memory." },
           title: "7. Prometheus scrapes every 5 seconds, Grafana renders the dashboard",
           body: [
             "The FastAPI service publishes Prometheus metrics on `/metrics`: request counters and rates, latency histograms (p50 / p95 / p99), error counters, in-flight requests, prediction-value distributions, batch-size distributions, container CPU and memory. Prometheus scrapes them every 5 seconds.",
@@ -478,7 +478,7 @@ export const PROJECTS_DATA: Project[] = [
           tools: ["Prometheus", "Grafana"]
         },
         {
-          image: { src: "/images/projects/nyc-taxi-mlops/prometheus.png", alt: "Prometheus query", caption: "Querying Prometheus directly: `rate(prediction_requests_total[1m])` broken down by endpoint." },
+          image: { src: "/images/projects/nyc-taxi-mlops/prometheus.webp", alt: "Prometheus query", caption: "Querying Prometheus directly: `rate(prediction_requests_total[1m])` broken down by endpoint." },
           title: "8. Raw Prometheus is one click away when the dashboard is not enough",
           body: [
             "Grafana is the default view, but the same metrics are queryable directly in Prometheus at `:9090`. `rate(prediction_requests_total[1m])` broken down by endpoint, `histogram_quantile(0.95, ...)` for p95 latency, `increase(...)` for cumulative counts. Useful when you want to ad-hoc explore a suspected regression before reaching for the dashboard."
@@ -486,7 +486,7 @@ export const PROJECTS_DATA: Project[] = [
           tools: ["Prometheus"]
         },
         {
-          image: { src: "/images/projects/nyc-taxi-mlops/locust.png", alt: "Locust load test stats", caption: "Live RPS, fail count, and p50 / p95 / p99 latency per endpoint while a Locust swarm runs against the inference container." },
+          image: { src: "/images/projects/nyc-taxi-mlops/locust.webp", alt: "Locust load test stats", caption: "Live RPS, fail count, and p50 / p95 / p99 latency per endpoint while a Locust swarm runs against the inference container." },
           title: "9. Locust generates traffic that looks like real traffic",
           body: [
             "Locust runs as a sibling container, so load testing is a `docker compose up locust` away. The locustfile mixes the endpoints in a 5 / 2 / 1 / 1 ratio (`/predict`, `/predict/batch` with 5 to 20 trips, `/health`, `/model/info`), which approximates real client behaviour far better than hammering a single endpoint.",
@@ -576,7 +576,7 @@ export const PROJECTS_DATA: Project[] = [
       summary: "A production-ready RAG system over the arXiv corpus. Apache Airflow orchestrates daily ingestion of new papers; Docling parses each PDF into structured content; a section-aware chunker preserves document boundaries; Jina v3 produces 1024-dim embeddings; OpenSearch indexes BM25 fields alongside HNSW vectors and combines them with Reciprocal Rank Fusion; FastAPI serves the RAG endpoints (sync + streaming); a local Ollama LLM generates grounded answers; Redis caches responses for a 150–400× speed-up on repeat queries; and Langfuse traces every step end-to-end. Seven services. One `docker compose up`.",
       hero: {
         image: {
-          src: "/images/projects/arxiv/architecture.png",
+          src: "/images/projects/arxiv/architecture.webp",
           alt: "arXiv RAG system architecture",
           caption: "Complete system architecture - ingestion pipeline, hybrid retrieval, LLM generation, caching, and observability. Source: arxiv-paper-rag repository."
         }
@@ -725,7 +725,7 @@ export const PROJECTS_DATA: Project[] = [
       summary: "An end-to-end MLOps pipeline for IMDB sentiment analysis: DVC reproducible pipeline stages (ingest -> preprocess -> features -> train -> evaluate -> register), MLflow experiment tracking + model registry on DAGSHub, GitHub Actions CI/CD that builds a Docker image and pushes it to AWS ECR, Kubernetes deployment to AWS EKS, and Prometheus + Grafana observability tracking latency, cost-per-request, and prediction distribution in production.",
       hero: {
         image: {
-          src: "/images/projects/imdb-mlops/architecture.png",
+          src: "/images/projects/imdb-mlops/architecture.webp",
           alt: "IMDB MLOps pipeline architecture",
           caption: "End-to-end MLOps pipeline across four lanes: Development (DVC + MLflow), CI/CD (GitHub Actions), Deployment (Docker + ECR + EKS), and Observability (Prometheus + Grafana)."
         }
@@ -867,7 +867,7 @@ export const PROJECTS_DATA: Project[] = [
       summary: "A predictive-maintenance system that estimates Remaining Useful Life (RUL) for turbofan engines using the NASA CMAPSS dataset. Six pipeline components run in sequence (ingestion, validation, transformation, model trainer, evaluation, pusher), the best regressor by RMSE is promoted, the chosen model is bundled into a Flask app, and the container is built and pushed by GitHub Actions to AWS Elastic Beanstalk and Heroku.",
       hero: {
         image: {
-          src: "/images/projects/nasa-turbofan/architecture.png",
+          src: "/images/projects/nasa-turbofan/architecture.webp",
           alt: "NASA Turbofan RUL prediction architecture",
           caption: "Four lanes: Data (CMAPSS), Modeling (compare regressors, keep best by RMSE), CI/CD (GitHub Actions builds and pushes a Docker image), and Deployment (Docker Hub to AWS Elastic Beanstalk, Heroku, and a local Flask UI)."
         }
@@ -966,7 +966,7 @@ export const PROJECTS_DATA: Project[] = [
       summary: "A Streamlit chatbot that turns natural-language questions into safe, validated SQL against a live database. Built on LangChain with a semantic-similarity few-shot selector over a Chroma vector store, table routing to keep prompts small, and a thin guardrail layer that blocks destructive operations. The model writes the query, the database returns the rows, and the agent rewrites the result as a short answer plus a 10-row markdown table.",
       hero: {
         image: {
-          src: "/images/projects/sql-chatbot/architecture.png",
+          src: "/images/projects/sql-chatbot/architecture.webp",
           alt: "SQL Database Chatbot architecture",
           caption: "User question to validated SQL: Streamlit UI, table router, RAG layer (Chroma vector store of few-shot examples, ERDs, table docs), LangChain agent driving OpenAI GPT, and a guardrail pass before MySQL ever sees the query."
         }
@@ -1065,7 +1065,7 @@ export const PROJECTS_DATA: Project[] = [
       summary: "A Streamlit podcast chatbot that takes audio from three different sources (YouTube URL, file upload, or live microphone recording), diarizes the speakers with pyannote.audio, transcribes each speaker with Whisper, indexes the transcripts in a FAISS vector store, auto-generates a list of suggested questions, and answers follow-ups through a LangChain QA chain backed by OpenAI GPT-4.",
       hero: {
         image: {
-          src: "/images/projects/podcast-chatbot/architecture.png",
+          src: "/images/projects/podcast-chatbot/architecture.webp",
           alt: "Podcast Chatbot architecture",
           caption: "Audio in, conversation out. Three input modes feed one pipeline: yt-dlp / FFmpeg to MP3, pyannote diarization, per-speaker chunking, Whisper transcription, LangChain embeddings into FAISS, then a Streamlit chat UI driving a QA chain on GPT-4."
         }

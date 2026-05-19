@@ -123,7 +123,9 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
           <div className="flex-shrink-0">
             <div className="w-48 h-48 md:w-64 md:h-64 rounded-2xl overflow-hidden shadow-lg border-4 border-white ring-1 ring-slate-200 relative group">
               <img 
-                src="/images/vinayak.jpeg" 
+                src="/images/vinayak.jpeg"
+                loading="lazy"
+                decoding="async" 
                 alt="Vinayak Mane" 
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />

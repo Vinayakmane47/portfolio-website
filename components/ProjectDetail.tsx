@@ -95,6 +95,8 @@ const TourStopCard: React.FC<{
               src={stop.image.src}
               alt={stop.image.alt ?? stop.title}
               onError={() => setImgErr(true)}
+              loading="lazy"
+              decoding="async"
               className="w-full h-auto block"
             />
             {stop.image.caption && (
@@ -165,6 +167,8 @@ const GalleryGrid: React.FC<{ items: ProjectImage[] }> = ({ items }) => {
               <img
                 src={img.src}
                 alt={img.alt ?? `Screenshot ${i + 1}`}
+                loading="lazy"
+                decoding="async"
                 onLoad={() => setLoaded((s) => ({ ...s, [i]: 'ok' }))}
                 onError={() => setLoaded((s) => ({ ...s, [i]: 'err' }))}
                 className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
@@ -302,6 +306,8 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ slug, onBack, onOp
             <img
               src={d.hero.image.src}
               alt={d.hero.image.alt ?? project.title}
+              decoding="async"
+              fetchPriority="high"
               className="w-full h-auto rounded-xl"
               onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
             />
