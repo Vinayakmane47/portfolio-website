@@ -8,16 +8,9 @@ import { Education } from './components/Education';
 import { Projects } from './components/Projects';
 import { ProjectDetail } from './components/ProjectDetail';
 import { Contact } from './components/Contact';
+import { ROUTES } from './routes';
 
-export const ROUTES = {
-  HOME: '/',
-  SKILLS: '/skills',
-  EDUCATION: '/education',
-  EXPERIENCE: '/experience',
-  PROJECTS: '/projects',
-  PROJECT_DETAIL: '/projects/:slug',
-  CONTACT: '/contact',
-} as const;
+export { ROUTES };
 
 const ScrollToTop: React.FC = () => {
   const { pathname } = useLocation();

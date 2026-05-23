@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { SectionWrapper } from './SectionWrapper';
 import { ArrowRight, Clock, FolderGit2, Wrench, GraduationCap } from 'lucide-react';
-import { ROUTES } from '../App';
+import { ROUTES } from '../routes';
 import { SKILLS_DATA } from '../constants';
 
 const STATS = [

@@ -10,7 +10,7 @@ import {
   Menu,
   X,
 } from 'lucide-react';
-import { ROUTES } from '../App';
+import { ROUTES } from '../routes';
 
 const navItems = [
   { to: ROUTES.HOME, icon: User, label: 'Home', end: true },
