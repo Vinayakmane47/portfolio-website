@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import {
   ArrowLeft,
   ArrowRight,
@@ -28,12 +29,6 @@ import {
 } from 'lucide-react';
 import { PROJECTS_DATA } from '../constants';
 import type { Project, ProjectImage } from '../types';
-
-interface ProjectDetailProps {
-  slug: string;
-  onBack: () => void;
-  onOpen: (slug: string) => void;
-}
 
 const renderFormattedText = (text: string): React.ReactNode[] => {
   const parts: React.ReactNode[] = [];
@@ -199,11 +194,16 @@ const Block: React.FC<BlockProps> = ({ icon, title, subtitle, children }) => (
   </section>
 );
 
-export const ProjectDetail: React.FC<ProjectDetailProps> = ({ slug, onBack, onOpen }) => {
+export const ProjectDetail: React.FC = () => {
+  const { slug } = useParams<{ slug: string }>();
+  const navigate = useNavigate();
   const idx = PROJECTS_DATA.findIndex((p) => p.slug === slug);
   const project: Project | undefined = idx >= 0 ? PROJECTS_DATA[idx] : undefined;
   const prev = idx > 0 ? PROJECTS_DATA[idx - 1] : null;
   const next = idx >= 0 && idx < PROJECTS_DATA.length - 1 ? PROJECTS_DATA[idx + 1] : null;
+
+  const onBack = () => navigate('/projects');
+  const onOpen = (s: string) => navigate(`/projects/${s}`);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });

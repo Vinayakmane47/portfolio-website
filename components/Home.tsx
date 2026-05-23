@@ -1,7 +1,8 @@
 import React, { useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { SectionWrapper } from './SectionWrapper';
 import { ArrowRight, Clock, FolderGit2, Wrench, GraduationCap } from 'lucide-react';
-import { Tab } from '../App';
+import { ROUTES } from '../App';
 import { SKILLS_DATA } from '../constants';
 
 const STATS = [
@@ -11,12 +12,9 @@ const STATS = [
   { icon: GraduationCap, value: `M.S.`, label: 'Artificial Intelligence', hint: 'Monash University, Melbourne' },
 ];
 
-interface HomeProps {
-  onNavigate: (tab: Tab) => void;
-}
-
-export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
+export const Home: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -109,7 +107,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
 
   return (
     <>
-    <SectionWrapper title="Welcome" subtitle="Artificial Intelligence & Machine Learning Engineer" id={Tab.HOME}>
+    <SectionWrapper title="Welcome" subtitle="Artificial Intelligence & Machine Learning Engineer" id="home">
       <div className="relative">
         {/* Background Animation Canvas */}
         <canvas 
@@ -153,14 +151,14 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
             </div>
 
             <div className="flex flex-wrap gap-4 pt-4 justify-center md:justify-start">
-              <button 
-                onClick={() => onNavigate(Tab.PROJECTS)}
+              <button
+                onClick={() => navigate(ROUTES.PROJECTS)}
                 className="px-6 py-3 bg-primary-600 text-white rounded-lg font-medium hover:bg-primary-700 transition-colors flex items-center gap-2 shadow-sm hover:shadow-md"
               >
                 View Projects <ArrowRight size={18} />
               </button>
-              <button 
-                onClick={() => onNavigate(Tab.CONTACT)}
+              <button
+                onClick={() => navigate(ROUTES.CONTACT)}
                 className="px-6 py-3 bg-white/80 backdrop-blur-sm text-slate-700 border border-slate-300 rounded-lg font-medium hover:bg-slate-50 transition-colors flex items-center gap-2"
               >
                 Contact Me

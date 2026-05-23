@@ -1,21 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { SectionWrapper } from './SectionWrapper';
-import { ProjectDetail } from './ProjectDetail';
 import { PROJECTS_DATA } from '../constants';
 import { Github, ExternalLink, Youtube, Calendar, ArrowRight } from 'lucide-react';
 
 export const Projects: React.FC = () => {
-  const [activeSlug, setActiveSlug] = useState<string | null>(null);
-
-  if (activeSlug) {
-    return (
-      <ProjectDetail
-        slug={activeSlug}
-        onBack={() => setActiveSlug(null)}
-        onOpen={(slug) => setActiveSlug(slug)}
-      />
-    );
-  }
+  const navigate = useNavigate();
+  const openProject = (slug: string) => navigate(`/projects/${slug}`);
 
   return (
     <SectionWrapper title="Projects" subtitle="Featured work and contributions">
@@ -27,8 +18,8 @@ export const Projects: React.FC = () => {
               key={project.slug}
               role="button"
               tabIndex={0}
-              onClick={() => setActiveSlug(project.slug)}
-              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setActiveSlug(project.slug); } }}
+              onClick={() => openProject(project.slug)}
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openProject(project.slug); } }}
               className="group flex flex-col text-left bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg hover:border-primary-200 transition-all duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-200"
             >
               <div className="p-5 md:p-6 flex-1 flex flex-col">
